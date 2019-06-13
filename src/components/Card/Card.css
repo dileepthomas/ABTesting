@@ -5,3 +5,7 @@
 .gradient-2{
     background-image: linear-gradient(230deg, #0e4cfd, #6a8eff);
 }
+
+.card-container {
+    cursor: pointer;
+}

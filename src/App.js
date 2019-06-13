@@ -8,8 +8,8 @@ class App extends Component{
     return(
       <div className="App">
       <div className="row abcard">
-        <Card name="Experiment" cardcolor="gradient-1" />
-        <Card name="Anaysis" cardcolor="gradient-2" />
+        <Card name="Experiment" cardcolor="gradient-1"  pathname="/experiment"  />
+        <Card name="Anaysis" cardcolor="gradient-2" pathname='/analytics'/>
       </div>
     </div>
     )

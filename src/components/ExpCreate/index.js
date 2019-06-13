@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
+import Form from '../Form';
 
 class ExpCreate extends Component{
     render(){
         return(
-            <div>
-                Create Form Will render here
-            </div>
+          <Form />
         )
     }
 }

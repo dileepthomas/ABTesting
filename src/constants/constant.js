@@ -26,7 +26,7 @@ const barChart = {
     },
   ],
   width: 500,
-  height: 500
+  height: 500,
 };
 
 const lineChart = {
@@ -49,12 +49,47 @@ const lineChart = {
     },
   ],
   width: 500,
-  height: 500
-}
+  height: 500,
+};
 
+const tableData = {
+  head: [
+    'Experiment Name',
+    'People Liked',
+    'People Disliked',
+    'Percentage of Success',
+  ],
+  body: [
+    {
+      experimentName: 'Exp 1',
+      peopleLiked: '33',
+      peopleDisliked: '2',
+      result: '75 %',
+    },
+    {
+      experimentName: 'Exp 1',
+      peopleLiked: '33',
+      peopleDisliked: '2',
+      result: '75 %',
+    },
+    {
+      experimentName: 'Exp 1',
+      peopleLiked: '33',
+      peopleDisliked: '2',
+      result: '75 %',
+    },
+    {
+      experimentName: 'Exp 1',
+      peopleLiked: '33',
+      peopleDisliked: '2',
+      result: '75 %',
+    },
+  ],
+};
 
 export default {
   pieChart,
   barChart,
-  lineChart
+  lineChart,
+  tableData
 };

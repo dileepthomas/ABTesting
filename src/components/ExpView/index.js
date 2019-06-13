@@ -1,11 +1,19 @@
 import React, {Component} from 'react';
+import Table from '../Table';
+import Constants from '../../constants/constant';
 
 class ExpView extends Component{
     render(){
+        const {
+            tableData :  {head, body}
+        } = Constants
         return(
-            <div>
-                Summary Will render here
-            </div>
+            <>
+            <Table 
+                head={head}
+                body={body}
+            />
+            </>
         )
     }
 }

@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 function Card(props) {
   return (
-    <div className="col-lg-3 col-sm-6 card-container">
+    <div className="card-container">
       <NavLink to={`${props.pathname}`} >
       <div className={`card ${props.cardcolor}`}>
         <div className="card-body">

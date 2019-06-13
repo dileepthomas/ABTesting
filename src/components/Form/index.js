@@ -1,14 +1,16 @@
 import React from 'react';
 import './createExperience.css';
 import AttributeForm from './attributeForm';
+import { withRouter } from 'react-router';
+import Modal from './Modal';
 
 export class createExperience extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
 			formObj: {},
-			counter: 1
-
+			counter: 1,
+			isModal: false
 		};
 
 	}
@@ -32,117 +34,115 @@ export class createExperience extends React.Component {
 
 		e.preventDefault();
 		localStorage.setItem('formValues', JSON.stringify(this.state.formObj))
+		this.setState({
+			isModal: true
+		})
 	}
 	_updateCounter = () => {
 		this.setState({ counter: this.state.counter + 1 }, () => { });
 	}
-	render() {
-		return (
-			<div className="form-container" >
-				<form onChange={this.formOnChangeHandler}
-					onSubmit={this._handleSubmit} >
-					<div className="row">
-						<div className="col-25">
-							<label htmlFor="fname">Experiment name</label>
-						</div>
-						<div className="col-50">
-							<input type="text" id="expName" name="experimentName" placeholder="Experiment name.." />
-						</div>
-					</div>
-					<div className="row a">
-						<div className="col-25">
-							<label htmlFor="attributes">Attributes</label>
-						</div>
 
+	close = () => {
+		this.setState({
+			isModal: false
+		})
+		this.props.history.push('/');
+	}
+
+	render() {
+		console.log(this.state.isModal)
+		return (
+			<div>
+				<div className="container">
+					<form className="offset-sm-2 text-center formpad" onChange={this.formOnChangeHandler}
+						onSubmit={this._handleSubmit}>
+						<div className="form-group row">
+							<label htmlFor="staticEmail" className="col-sm-2 col-form-label">Experiment Name</label>
+							<div className="col-sm-6">
+								<input type="text" className="form-control-plaintext" id="experimentName" name="experimentName" />
+							</div>
+						</div>
+						<div className="form-group row">
+							<label htmlFor="inputPassword" className="col-sm-2 col-form-label">Attributes</label>
+							<div className="col-sm-6">
 							<AttributeForm _updateCounter={this._updateCounter} counter={this.state.counter} />
 
-					</div>
-
-					<div className="row disPercentage">
-						<div className="col-25">
-							<label htmlFor="percentage">Percentage</label>
-						</div>
-						<div className="col-25">
-							<input type="text" id="percentage" name="percentage" />
-						</div>
-					</div>
-					<div className="row">
-						<div className="col-25">
-							<label htmlFor="stickyness">Stickyness</label>
-						</div>
-						<div className="col-25">
-							<input type="text" id="stickyness" name="stickyness" />
-						</div>
-						<div className="col-1">
-							<label htmlFor="stickyness">minutes</label>
-						</div>
-					</div>
-
-					<div className="row">
-						<div className="col-25">
-							<label htmlFor="duration">Experiment Duration</label>
-						</div>
-						<div className="col-25">
-							<input type="text" id="duration" name="duration" />
-						</div>
-						<div className="col-1">
-							<label htmlFor="duration">minutes</label>
-						</div>
-					</div>
-
-					<div className="row">
-						<div className="col-sm-12">
-							<input type="submit" value="Submit" data-toggle="modal" data-target="#myModal" />
-						</div>
-					</div>
-				</form>
-
-
-				<div className="modal fade" id="myModal" role="dialog">
-					<div className="modal-dialog">
-						<div className="modal-content">
-							<div className="modal-header">
-								<h4 className="modal-title">Summary</h4>
-							</div>
-							<div className="modal-body">
-								<div className="leftAllign">
-									<span>Experiment name:</span>
-									<span>{this.state.formObj.experimentName}</span>
-								</div>
-								<div className="leftAllign">
-									<span>End point:</span>
-									<span>API.tesco.com/AB experiment/{this.state.formObj.experimentName}</span>
-								</div>
-								<div className="leftAllign">
-									<span>Request body:</span>
-									<div className="reqBody">
-										<span>{"{"}</span>
-										<span className="dispFlex">Experiment name: {this.state.formObj.experimentName}</span>
-										<span className="dispFlex">Percentage: {this.state.formObj.percentage}</span>
-										<span className="dispFlex">Stickyness: {this.state.formObj.stickyness}</span>
-										<span className="dispFlex">Duration: {this.state.formObj.duration}</span>
-										<span>{"}"}</span>
-									</div>
-								</div>
 
 							</div>
-							<div className="modal-footer">
-								<button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+						<div className="form-group row">
+							<label htmlFor="inputPassword" className="col-sm-2 col-form-label">Percentage</label>
+							<div className="col-sm-6">
+								<input type="text" className="form-control" id="percentage" name="percentage" />
 							</div>
 						</div>
+						<div className="form-group row">
+							<label htmlFor="inputPassword" className="col-sm-2 col-form-label">Stickyness</label>
+							<div className="col-sm-6">
+								<input type="text" className="form-control" id="stickyness" name="stickyness" />
+							</div>
+						</div>
+						<div className="form-group row">
+							<label htmlFor="inputPassword" className="col-sm-2 col-form-label">Experiment Duration</label>
+							<div className="col-sm-6">
+								<input type="text" className="form-control" id="duration" name="duration" />
+							</div>
+						</div>
+						<div className="form-group row form-inlin justify-content-center">
+							<button type="submit" className="btn btn-primary" 
+							>Submit</button>
+						</div>
 
-					</div>
+					</form>
+
 				</div>
+				{
+					this.state.isModal ? 
+					<Modal formData={this.state.formObj} />
+				// <div className="modal fade"  role="dialog">
+				// 	<div className="modal-dialog">
+				// 		<div className="modal-content">
+				// 			<div className="modal-header">
+				// 				<h4 className="modal-title">Summary</h4>
+				// 			</div>
+				// 			<div className="modal-body">
+				// 				<div className="leftAllign">
+				// 					<span>Experiment name:</span>
+				// 					<span>{this.state.formObj.experimentName}</span>
+				// 				</div>
+				// 				<div className="leftAllign">
+				// 					<span>End point:</span>
+				// 					<span>API.tesco.com/AB experiment/{this.state.formObj.experimentName}</span>
+				// 				</div>
+				// 				<div className="leftAllign">
+				// 					<span>Request body:</span>
+				// 					<div className="reqBody">
+				// 						<span>{"{"}</span>
+				// 						<span className="dispFlex">Experiment name: {this.state.formObj.experimentName}</span>
+				// 						<span className="dispFlex">Percentage: {this.state.formObj.percentage}</span>
+				// 						<span className="dispFlex">Stickyness: {this.state.formObj.stickyness}</span>
+				// 						<span className="dispFlex">Duration: {this.state.formObj.duration}</span>
+				// 						<span>{"}"}</span>
+				// 					</div>
+				// 				</div>
 
-			</div>
+				// 			</div>
+				// 			<div className="modal-footer">
+				// 				<button type="button" className="btn btn-default" onClick={this.close}>Close</button>
+				// 			</div>
+				// 		</div>
 
+				// 	</div>
+				// </div>
+			:
+			null
+				}
+							</div>
 
-
-
-		)
+		);
 
 
 	}
 }
 
-export default createExperience;
+export default withRouter(createExperience);

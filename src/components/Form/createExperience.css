@@ -67,7 +67,6 @@
 
   .addIcon{
     background-color: white;
-    border-radius: 50%;
     cursor: pointer;
     color: #a7a8aa;
     box-shadow: none;
@@ -96,3 +95,12 @@
   .a div:nth-child(1n+3){
         margin-left: 25%;
   }
+
+.container-flex{
+  display: flex;
+}
+
+.formpad{
+  padding-top: 20px;
+}
+  

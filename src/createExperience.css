@@ -69,4 +69,27 @@
     color: #a7a8aa;
     box-shadow: none;
     border: 1px solid #a7a8aa;
+    margin-top: 10%;
+  }
+
+  .leftAllign{
+      float: left;
+  }
+  .reqBody{
+      background-color: lightgrey;
+      float: right;
+      margin-top: 25px;
+
+  }
+  .dispFlex{
+      display: flex;
+  }
+
+
+  .disPercentage{
+      margin-top: 2%;
+  }
+
+  .a div:nth-child(1n+3){
+        margin-left: 25%;
   }

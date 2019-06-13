@@ -1,12 +1,14 @@
 
 import React from 'react';
 import './createExperience.css';
+import AttributeForm from './attributeForm';
 
 export class createExperience extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			formObj: {}
+			formObj: {},
+			counter: 1
 
 		};
 		
@@ -28,9 +30,12 @@ export class createExperience extends React.Component {
 	}
 
 	_handleSubmit = e => {
-		
+
 		e.preventDefault();
 		console.log(this.state.formObj)
+	}
+	_updateCounter = () =>{
+		this.setState({counter: this.state.counter+1},()=>{});
 	}
 	render() {
 		return (
@@ -49,21 +54,10 @@ export class createExperience extends React.Component {
 						<div className="col-25">
 							<label htmlFor="attributes">Attributes</label>
 						</div>
-						<div className="col-25">
-							<label htmlFor="lname">Name</label>
-
-							<div className="col-75">
-								<input type="text" id="attrName" name="attrName"  />
-							</div>
-						</div>
-
-						<div className="col-25">
-							<label htmlFor="lname">Default value</label>
-
-							<div className="col-75">
-								<input type="text" id="defaultValue" name="defaultValue"  />
-							</div>
-						</div>
+						
+					
+						<AttributeForm _updateCounter = { this._updateCounter} counter={this.state.counter} />
+								
 
 					</div>
 					<div className="row">

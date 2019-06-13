@@ -61,3 +61,12 @@
     display: table;
     clear: both;
   }
+
+  .addIcon{
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #a7a8aa;
+    box-shadow: none;
+    border: 1px solid #a7a8aa;
+  }

@@ -1,11 +1,15 @@
 import React from 'react';
-import './App.css';
+import Header from './components/Header/Header';
+import Card from './components/Card/Card';
 
 function App() {
   return (
-    <>
-    AB Testing 
-    </>
+    <div className="App">
+      <Header />
+      <div className="container-fluid mt-3">
+        <Card />
+      </div>
+    </div>
   );
 }
 

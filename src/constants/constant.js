@@ -1,6 +1,12 @@
+let randomNumber = Math.random().toFixed(2)*100 
+
+
 const pieChart = {
-  data: [{ name: 'Success', value: 80 }, { name: 'Failure', value: 20 }],
-  colors: ['#0088FE', '#00C49F'],
+  data: [
+    { name: 'Success', value: randomNumber},
+    { name: 'Failure', value: 100 -randomNumber},
+  ],
+  colors: ['green', 'red'],
   width: 600,
   height: 600,
   outerRadius: 120,
@@ -9,20 +15,20 @@ const pieChart = {
 const barChart = {
   data: [
     {
-      name: '2012',
-      resource: 4000,
+      name: 'Clicks',
+      resource: Math.floor(1000 + Math.random() * 9000),
     },
     {
-      name: '2014',
-      resource: 3000,
+      name: 'Hover',
+      resource: Math.floor(1000 + Math.random() * 9000),
     },
     {
-      name: '2016',
-      resource: 2000,
+      name: 'Navigation',
+      resource: Math.floor(1000 + Math.random() * 9000),
     },
     {
-      name: '2018',
-      resource: 2780,
+      name: 'Close',
+      resource: Math.floor(1000 + Math.random() * 9000),
     },
   ],
   width: 500,
@@ -32,20 +38,20 @@ const barChart = {
 const lineChart = {
   data: [
     {
-      name: '2012',
-      resource: 4000,
+      time: '12.00 AM',
+      resource: Math.floor(1000 + Math.random() * 9000),
     },
     {
-      name: '2014',
-      resource: 3000,
+      time: '06.00 AM',
+      resource: Math.floor(1000 + Math.random() * 9000),
     },
     {
-      name: '2016',
-      resource: 2000,
+      time: '12.00 PM',
+      resource: Math.floor(1000 + Math.random() * 9000),
     },
     {
-      name: '2018',
-      resource: 2780,
+      time: '06.00 PM',
+      resource: Math.floor(1000 + Math.random() * 9000),
     },
   ],
   width: 500,
@@ -53,36 +59,19 @@ const lineChart = {
 };
 
 const tableData = {
-  head: [
-    'Experiment Name',
-    'People Liked',
-    'People Disliked',
-    'Percentage of Success',
-  ],
+  head: ['Experiment Name'],
   body: [
     {
-      experimentName: 'Exp 1',
-      peopleLiked: '33',
-      peopleDisliked: '2',
-      result: '75 %',
+      experimentName: 'AB Testing 1',
     },
     {
-      experimentName: 'Exp 1',
-      peopleLiked: '33',
-      peopleDisliked: '2',
-      result: '75 %',
+      experimentName: 'AB Testing 2',
     },
     {
-      experimentName: 'Exp 1',
-      peopleLiked: '33',
-      peopleDisliked: '2',
-      result: '75 %',
+      experimentName: 'AB Testing 3',
     },
     {
-      experimentName: 'Exp 1',
-      peopleLiked: '33',
-      peopleDisliked: '2',
-      result: '75 %',
+      experimentName: 'AB Testing 4',
     },
   ],
 };
@@ -91,5 +80,5 @@ export default {
   pieChart,
   barChart,
   lineChart,
-  tableData
+  tableData,
 };

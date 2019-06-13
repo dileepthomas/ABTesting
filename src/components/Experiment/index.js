@@ -8,13 +8,15 @@ class Experiment extends Component {
       <div className="experiment-container">
         <Card
           pathname={`/experiment/create`}
-          cardcolor="gradient-1"
+          cardcolor="gradient-3"
           name="Create a Experiment"
+          cardImage='../../download.png'
         />
          <Card
           pathname={`/experiment/view`}
-          cardcolor="gradient-2"
+          cardcolor="gradient-4"
           name="View Experiments"
+          cardImage='../../images.png'
         />
       </div>
     );

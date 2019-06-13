@@ -20,7 +20,7 @@ export default class LineChartCustom extends PureComponent {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="time" />
+        <XAxis dataKey="time"/>
         <YAxis />
         <Tooltip />
         <Legend />

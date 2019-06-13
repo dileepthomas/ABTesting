@@ -6,6 +6,13 @@
     background-image: linear-gradient(230deg, #0e4cfd, #6a8eff);
 }
 
+.gradient-3{
+    background-image: linear-gradient(230deg, #73c8a9, #373b44);
+}
+
+.gradient-4{
+    background-image: linear-gradient(230deg, #556270, #ff6b6b);
+}
 .card-container {
     cursor: pointer;
 }

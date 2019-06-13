@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import './style.css';
+import { NavLink } from 'react-router-dom';
+
 
 
 class Table extends Component{
@@ -23,16 +25,10 @@ class Table extends Component{
                 body.map(bodyData => {
                     const {
                         experimentName,
-                        peopleLiked,
-                        peopleDisliked,
-                        result
                     } = bodyData
                     return (
                         <tr>
-                            <td>{experimentName}</td>
-                            <td>{peopleLiked}</td>
-                            <td>{peopleDisliked}</td>
-                            <td>{result}</td>
+                            <td><NavLink to="/analytics">{experimentName}</NavLink></td>
                         </tr>
                     )
                 })

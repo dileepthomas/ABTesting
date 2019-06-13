@@ -9,3 +9,16 @@
 .card-container {
     cursor: pointer;
 }
+
+.imgwidth{
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+.card-body{
+    text-align: center;
+}
+
+.card-title{
+    font-weight: bold;
+}

@@ -8,11 +8,11 @@ class Analytics extends Component {
   render() {
     const { pieChart, barChart, lineChart } = Constants;
     return (
-      <>
+      <div>
         <PieChart configData={pieChart} />
         <BarChart configData={barChart} />
         <LineChart configData={lineChart} />{' '}
-      </>
+      </div>
     );
   }
 }

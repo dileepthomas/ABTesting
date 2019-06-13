@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Card from './components/Card';
+import Card from './components/Card/Card';
 import './App.css';
 
 
@@ -8,13 +8,12 @@ class App extends Component{
     return(
       <div className="App">
       <div className="row abcard">
-        <Card name="Experiment" cardcolor="gradient-1"  pathname="/experiment"  />
-        <Card name="Anaysis" cardcolor="gradient-2" pathname='/analytics'/>
+        <Card name="Experiment" cardcolor="gradient-1" cardImage="../Flask-Liquid-3233877.jpg" pathname='/expermient'/>
+        <Card name="Analysis" cardcolor="gradient-2" cardImage="../waitingforgodsgoodgifts.jpg" pathname='/analytics'/>
       </div>
     </div>
     )
   }
 }
-
 
 export default App;

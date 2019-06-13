@@ -5,7 +5,7 @@ import Footer from '../Footer';
 class Layout extends Component{
     render(){
         return(
-            <div>
+            <div className="appwidth">
                 <Header />
                 {
                     this.props.children

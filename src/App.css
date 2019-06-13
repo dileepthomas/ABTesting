@@ -1,5 +1,9 @@
-.abcard{
-    display: flex;
-    justify-content: center;
-    margin-top: 150px;
+.abcard {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+}
+.appwidth {
+  position: fixed;
+  width: 100%;
 }

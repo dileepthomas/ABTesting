@@ -6,19 +6,8 @@ class Header extends Component {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark static-top">
           <div className="container">
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarResponsive"
-              aria-controls="navbarResponsive"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon" />
-            </button>
             <div className="collapse navbar-collapse" id="navbarResponsive">
-              <h1 className="header">A/B Experiment</h1>
+              <h1 className="header">A/B Experiment and Analysis</h1>
             </div>
           </div>
         </nav>

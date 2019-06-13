@@ -8,7 +8,7 @@ class App extends Component{
     return(
       <div className="App">
       <div className="row abcard">
-        <Card name="Experiment" cardcolor="gradient-1" cardImage="../Flask-Liquid-3233877.jpg" pathname='/expermient'/>
+        <Card name="Experiment" cardcolor="gradient-1" cardImage="../Flask-Liquid-3233877.jpg" pathname='/experiment'/>
         <Card name="Analysis" cardcolor="gradient-2" cardImage="../waitingforgodsgoodgifts.jpg" pathname='/analytics'/>
       </div>
     </div>

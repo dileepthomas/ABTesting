@@ -1,0 +1,14 @@
+.charts-container{
+    height: 400px;
+    overflow-y: auto;
+}
+
+.first-section-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.second-section-container{
+    display: flex;
+    justify-content: center;
+}
